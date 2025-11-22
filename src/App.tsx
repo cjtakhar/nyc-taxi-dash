@@ -54,8 +54,8 @@ async function fetchJSON<T>(url: string): Promise<T> {
 
 const App: React.FC = () => {
   // date range – adjust defaults to whatever your data has
-  const [startDate, setStartDate] = useState("2023-01-01");
-  const [endDate, setEndDate] = useState("2023-01-31");
+  const [startDate, setStartDate] = useState("2025-01-01");
+  const [endDate, setEndDate] = useState("2025-01-31");
 
   const [summary, setSummary] = useState<SummaryMetrics | null>(null);
   const [daily, setDaily] = useState<DailyRevenuePoint[]>([]);
@@ -104,6 +104,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app-root">
+      <div className="app-container">
       <header className="header">
         <div>
           <h1>NYC Taxi Insights</h1>
@@ -316,6 +317,7 @@ const App: React.FC = () => {
       <footer className="footer">
         <span>Built on Airflow • Postgres • dbt • React • Recharts</span>
       </footer>
+      </div>
     </div>
   );
 };
